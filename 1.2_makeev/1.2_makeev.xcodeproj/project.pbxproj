@@ -11,22 +11,22 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		712ED0F32E45240900EE9167 /* Exceptions for "1" folder in "1.2_makeev" target */ = {
+		712ED1012E45267600EE9167 /* Exceptions for "1.2_makeev" folder in "1.2_makeev" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				1.2_makeev/Info.plist,
+				1/Info.plist,
 			);
 			target = 718946672E428DE200F9FB2A /* 1.2_makeev */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		712ED0E52E4523FC00EE9167 /* 1 */ = {
+		712ED0FB2E45267600EE9167 /* 1.2_makeev */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				712ED0F32E45240900EE9167 /* Exceptions for "1" folder in "1.2_makeev" target */,
+				712ED1012E45267600EE9167 /* Exceptions for "1.2_makeev" folder in "1.2_makeev" target */,
 			);
-			path = 1;
+			path = 1.2_makeev;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -45,7 +45,7 @@
 		7189465F2E428DE200F9FB2A = {
 			isa = PBXGroup;
 			children = (
-				712ED0E52E4523FC00EE9167 /* 1 */,
+				712ED0FB2E45267600EE9167 /* 1.2_makeev */,
 				718946692E428DE200F9FB2A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -74,7 +74,7 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				712ED0E52E4523FC00EE9167 /* 1 */,
+				712ED0FB2E45267600EE9167 /* 1.2_makeev */,
 			);
 			name = 1.2_makeev;
 			packageProductDependencies = (
