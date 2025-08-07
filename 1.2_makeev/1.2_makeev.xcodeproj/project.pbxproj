@@ -14,7 +14,7 @@
 		712ED1012E45267600EE9167 /* Exceptions for "1.2_makeev" folder in "1.2_makeev" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				1/Info.plist,
+				Info.plist,
 			);
 			target = 718946672E428DE200F9FB2A /* 1.2_makeev */;
 		};
