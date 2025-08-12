@@ -9,16 +9,7 @@ import UIKit
 
 final class ViewController: UIViewController {
     
-    private let mainView: MainView
-    
-    init(mainView: MainView = MainView()) {
-        self.mainView = mainView
-        super.init(nibName: nil, bundle: nil)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+    private let mainView = MainView()
     
     override func loadView() {
         view = mainView

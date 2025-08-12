@@ -9,10 +9,9 @@ import UIKit
 
 final class MainView: UIView {
     
-    private let textView: UITextView
+    private let textView = TextView()
     
-    init(frame: CGRect = .zero, textView: UITextView = TextView()) {
-        self.textView = textView
+    override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
     }
@@ -37,7 +36,6 @@ final class MainView: UIView {
             textView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 20),
             textView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
             textView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
-            textView.bottomAnchor.constraint(lessThanOrEqualTo: safeAreaLayoutGuide.bottomAnchor, constant: -20)
         ])
     }
 }
