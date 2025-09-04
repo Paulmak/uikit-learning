@@ -16,16 +16,19 @@ final class MainView: UIView {
     }()
     
     private lazy var secondButton: StyledButton = {
-        let button = StyledButton(style: .firstStyle,
-                                  title: "Second styled button",
-                                  config: .init(
-                                    textColor: .red,
-                                    backgroundColor: .brown,
-                                    cornerRadius: 22,
-                                    shadowOpacity: 18,
-                                    shadowRadius: 20,
-                                    borderColor: .black,
-                                    borderWidth: 4)
+        let button = StyledButton(
+            style: .custom(
+                config: StyledButton.Config(
+                    textColor: .red,
+                    backgroundColor: .brown,
+                    cornerRadius: 22,
+                    shadowOpacity: 18,
+                    shadowRadius: 20,
+                    borderColor: .black,
+                    borderWidth: 4
+                )
+            ),
+            title: "Second styled button"
         )
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
@@ -38,15 +41,19 @@ final class MainView: UIView {
     }()
     
     private lazy var fourthButton: StyledButton = {
-        let button = StyledButton(style: .secondStyle,
-                                  title: "Second styled button",
-                                  config: .init(
-                                    textColor: .blue,
-                                    cornerRadius: 30,
-                                    shadowOpacity: 10,
-                                    shadowRadius: 11,
-                                    borderColor: .green,
-                                    borderWidth: 6))
+        let button = StyledButton(
+            style: .custom(
+                config: StyledButton.Config(
+                    textColor: .blue,
+                    cornerRadius: 30,
+                    shadowOpacity: 10,
+                    shadowRadius: 11,
+                    borderColor: .green,
+                    borderWidth: 6
+                )
+            ),
+            title: "Fourth styled button"
+        )
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()

@@ -12,6 +12,7 @@ final class StyledButton: UIButton {
     enum Style {
         case firstStyle
         case secondStyle
+        case custom(config: Config)
     }
     
     struct Config {
@@ -22,32 +23,19 @@ final class StyledButton: UIButton {
         var shadowRadius: CGFloat?
         var borderColor: UIColor?
         var borderWidth: CGFloat?
-        
-        func apply(to button: UIButton) {
-            textColor.map { button.setTitleColor($0, for: .normal) }
-            backgroundColor.map { button.backgroundColor = $0 }
-            cornerRadius.map { button.layer.cornerRadius = $0 }
-            shadowOpacity.map { button.layer.shadowOpacity = $0 }
-            shadowRadius.map { button.layer.shadowRadius = $0 }
-            borderColor.map { button.layer.borderColor = $0.cgColor }
-            borderWidth.map { button.layer.borderWidth = $0 }
-        }
     }
     
-    private var style: Style
-    private var title: String
-    private var config: Config?
+    private let style: Style
+    private let title: String
     
-    init(style: Style, title: String, config: Config? = nil) {
+    init(style: Style, title: String) {
         self.style = style
         self.title = title
-        self.config = config
         
         super.init(frame: .zero)
         self.layer.cornerRadius = 12
         self.setTitle(title, for: .normal)
         setupStyle()
-        applyConfigOverrides()
     }
     
     required init?(coder: NSCoder) {
@@ -69,10 +57,15 @@ final class StyledButton: UIButton {
             self.setTitleColor(titleColor, for: .normal)
             self.layer.borderColor = titleColor.cgColor
             self.layer.borderWidth = 2
+            
+        case .custom(let config):
+            config.textColor.map { self.setTitleColor($0, for: .normal) }
+            config.backgroundColor.map { self.backgroundColor = $0 }
+            config.cornerRadius.map { self.layer.cornerRadius = $0 }
+            config.shadowOpacity.map { self.layer.shadowOpacity = $0 }
+            config.shadowRadius.map { self.layer.shadowRadius = $0 }
+            config.borderColor.map { self.layer.borderColor = $0.cgColor }
+            config.borderWidth.map { self.layer.borderWidth = $0 }
         }
-    }
-    
-    private func applyConfigOverrides() {
-        config?.apply(to: self)
     }
 }
