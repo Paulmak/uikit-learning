@@ -6,6 +6,7 @@
 //
 
 import UIKit
+
 enum ImageAssets {
     
     static let backIcon = UIImage(named: "back_icon")
